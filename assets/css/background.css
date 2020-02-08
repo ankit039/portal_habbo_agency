@@ -7,16 +7,17 @@
 
 body{
     font-family: 'Exo', sans-serif;
+    overflow-x: hidden;
 }
 
 div.waves{
   width: 100%;
   bottom: 0;
-  z-index: 99;
+  z-index: -1;
 }
 
 svg{
-  width: 100%;
+  width: 105%;
   position: fixed; bottom:0;
   animation-name: move-left;
   animation-duration: 4s;
