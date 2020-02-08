@@ -36,9 +36,8 @@
                   Rank
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Ranks</a>
-                  <a class="dropdown-item" href="#">Promotion Tags</a>
-                  <a class="dropdown-item" href="#">Rank Price</a>
+                  <a class="dropdown-item" href="./ranks">Ranks</a>
+                  <a class="dropdown-item" href="./rankprice">Rank Price</a>
                 </div>
               </li>
               <!--2-->
