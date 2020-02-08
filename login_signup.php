@@ -11,7 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-
+<style>
+    h1{
+    font-size: 50px;
+    }  
+  </style>
 
 <body>
     <div class="loader">
@@ -67,13 +71,14 @@
       </nav>
 
     <!--Form-->
+    <br><br>
       <div class="row">
         <div class="col-xl-4 col-md-3 col-2">
         </div>
         <div class="col-xl-4 col-md-6 col-8">
     <!--login-->
       <form id="login_form" name="login" method="post" action="./Login.php">
-      <h4><?php echo $agencyname;?></h4>
+      <strong><h1><?php echo $agencyname;?></h1></strong>
         <div class="form-group">
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -89,7 +94,7 @@
       </form>
     <!--signup-->
       <form id="register_form" action="RegistrationPage.php" method="POST" style="display: none;">
-      <h4><?php echo $agencyname;?></h4>
+      <strong><h1><?php echo $agencyname;?></h1></strong>
       <div class="form-group">
           <input type="text" class="form-control" id="exampleInputText" placeholder="Habbo Username">
         </div>
@@ -126,11 +131,11 @@
     if(isLoginVisible) {
         $("#login_form").hide();
         $("#register_form").show();
-        $("#switchForm > p").html("<br>Already member? Login now!");
+        $("#switchForm > p").html("<br>Already member? Login now!<br><br>");
     } else {
         $("#login_form").show();
         $("#register_form").hide();
-        $("#switchForm > p").html("<br>Not yet a member? Register now!");
+        $("#switchForm > p").html("<br>Not yet a member? Register now!<br><br>");
     }
     })
 
