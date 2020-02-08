@@ -1,15 +1,43 @@
 <!DOCTYPE html>
+<?php include 'variable.php';?>
 <html>
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/background.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/font.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-
+<style>
+  .text1 h1{
+    font-size: 60px;
+  }  
+  .text2 h2{  
+    font-size: 40px;
+  }
+  .text3 h3{  
+    font-size: 30px;
+  }
+  .wrapperbtn{
+    text-align: center;
+  }
+  @media only screen and (max-width: 768px) {
+    .text1 h1{
+    font-size: 40px;
+    }  
+    .text2 h2{  
+      font-size: 25px;
+    }
+    .text3 h3{  
+      font-size: 20px;
+    }
+    
+  }
+ 
+  </style>
 
 <body>
     <div class="loader">
@@ -65,7 +93,41 @@
         </div>
       </nav>
 
-      
+      <br><br>
+      <div class="row">
+        <div class="col-xl-1 col-md-1 col-1">
+        </div>
+        <div class="col-xl-10 col-md-10 col-10">
+        <blockquote class="blockquote text-center display-1">
+          <div class="text1">
+            <h1><strong><?php echo $agencyfullname; ?></strong></h1>
+          </div>
+        </blockquote>
+       </div> 
+       <div class="row">
+        <div class="col-xl-1 col-md-1 col-1">
+        </div>
+        <div class="col-xl-10 col-md-10 col-10">
+            <blockquote class="blockquote text-center">
+            <div class="text2">
+            <h2>Welcome to our fansite of habbo's National Security Services Agency.
+             We are proud to have you a member or supporter in our family.<br>
+             National Security Service was founded by <strong>Tilhanda.</strong></h2>
+             </div><br>
+             <div class="text3">
+             <h3>You can design, create, and build the most wonderful place in the world.<br>
+                It takes people to make the dream a reality.
+                <footer class="blockquote-footer">Someone once said..<cite title="Source Title">Work is the bridge between dreams and reality.</cite></footer> 
+                So just be warned: if you have big dreams be ready for a ton of hard work.​</h3>
+              </div>
+            </blockquote>
+            <br>
+            <div class="wrapperbtn">
+            <button type="button" class="btn btn-center btn-info">Code Of Conduct</button>
+            </div>
+            <br><br>
+        </div>
+ 
     <!--end loading-->
     <script>
     window.addEventListener("load", function () {
