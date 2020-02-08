@@ -5,6 +5,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/background.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/font.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -110,7 +111,7 @@
       </form>
         <a id="switchForm" href="#">
         <p>Not yet a member? Register now!</p></a>
-    
+
       </div>
 
     <!--end loading-->
@@ -134,7 +135,7 @@
     })
 
     </script>
-    
+
     <!-- Wave SVG Animation -->
   <div class="waves">
     <svg width="100%" height="150px" fill="none" version="1.1"
