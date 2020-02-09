@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php $habboname=$_GET['username']; include 'profileconnect.php?hname=$habboname';?>
+<?php session_start(); $habboname=$_GET['username']; include_once './l_profile_connect.php'; include_once './promotion_connect.php'; include_once './demotion_connect.php';?>
 <html>
 <head>
     <title></title>
@@ -54,49 +54,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index">Home</a>
-          </li>
-              <!--1-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Rank
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="./ranks">Ranks</a>
-                  <a class="dropdown-item" href="./rankprice">Rank Price</a>
-                </div>
-              </li>
-              <!--2-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Special Units
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">External Affairs</a>
-                  <a class="dropdown-item" href="#">Financial Affairs</a>
-                  <a class="dropdown-item" href="#">Internal Affairs</a>
-                  <a class="dropdown-item" href="#">Transfer Unit</a>
-                </div>
-              </li>
-              <!--3-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Importants Links
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Code Of Conduct</a>
-                  <a class="dropdown-item" href="#">Pay FAQ</a>
-                </div>
-              </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./n_search">Search</a>
+         <li class="nav-item">
+          <script type="text/javascript">
+                function goBack() {
+                window.history.back();
+              }
+          </script>
+            <a class="nav-link" onclick="goBack()">Back</a>
           </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Login/Sign-up</button></a>
+            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
+              <ul class="nav-item">
+              <a href="./n_profile?username=<?php echo $_SESSION["hname"]?>"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>" height="50px" width="50px" style="border-radius: 50%;"></a>
+              </ul>
       </nav>
 
       <!--image-->
@@ -105,7 +78,7 @@
         </div>
         <div class="col-xl-1 col-md-1 col-1">
      <div class="habboavatar">
-      <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda"><br>
+      <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=<?php echo $habboname?>" class="rounded float-right" alt="<?php echo $habboname?>"><br>
       </div>
       </div>
     </div>
@@ -116,37 +89,17 @@
         <div class="col-xl-6 col-md-8 col-8">
     <table class="table">
   <tbody>
-    <?php //if ($result_profile = $mysqli->query($query)) { ?>
-        <?php //while ($row = $result->fetch_assoc()) { ?>
+    <?php if ($result_profile = $mysqli->query($query_profile)) { ?>
+        <?php while ($row = $result_profile->fetch_assoc()) { ?>
              <?php 
-                    $field1name = "tilhanda";
-                    $field2name = "Founder";
-                    $field3name = "Admin";
-                    $field4name = "01-01-2020";
-                    //$field1name = $row["hanme"];
-                    //$field2name = $row["email"];
-                    //$field3name = $row["rank"];
-                    //$field4name = $row["updatedby"];
-                    //$field5name = $row["updatedate"];
+                    $field1name = $row["hname"];
                      ?>
     <tr>
       <td>Habbo Username: </td>
       <td><?php echo '<b>'.$field1name.'</b>';?></td>
     </tr>
-    <tr>
-      <td>Rank: </td>
-      <td><?php echo '<b>'.$field2name.'</b>';?></td>
-    </tr>
-    <tr>
-      <td>Updated By: </td>
-      <td><?php echo '<b>'.$field3name.'</b>';?></td>
-    </tr>
-    <tr>
-      <td>Update Date: </td>
-      <td><?php echo '<b>'.$field4name.'</b>';?></td>
-    </tr>
-          <?php //} ?>
-        <?php //} ?>
+          <?php } ?>
+        <?php } ?>
   </tbody>
 </table>
 <!--promotion logs of user-->
@@ -155,24 +108,20 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">Habbo Username</th>
-      <th scope="col">Division</th>
-      <th scope="col">Rank</th>
-      <th scope="col">Date</th>
+      <th scope="col">Old Rank</th>
+      <th scope="col">New Rank</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Updated On</th>
     </tr>
   </thead>
   <tbody>
-    <?php //if ($result_promotion = $mysqli->query($query)) { ?>
-        <?php //while ($row = $result->fetch_assoc()) { ?>
+    <?php if ($result_promotion = $mysqli->query($query_promotion)) { ?>
+        <?php while ($row = $result_promotion->fetch_assoc()) { ?>
              <?php 
-                    $field1proname = "_ANKIT_";
-                    $field2proname = "1ic";
-                    $field3proname = "Junior Founder";
-                    $field4proname = "01-01-2020";
-                    //$field1proname = $row["hname"];
-                    //$field2proname = $row["div"];
-                    //$field3proname = $row["updatedate"];
-                    //$field4proname = $row["reason"];
+                    $field1proname = $row["oldrank"];
+                    $field2proname = $row["newrank"];
+                    $field3proname = $row["updatedby"];
+                    $field4proname = $row["updatedate"];
                      ?>
       <tr>
         <td><?php echo '<b>'.$field1proname.'</b>';?></td>
@@ -180,8 +129,8 @@
         <td><?php echo '<b>'.$field3proname.'</b>';?></td>
         <td><?php echo '<b>'.$field4proname.'</b>';?></td>
       </tr>
-        <?php //} ?>
-        <?php //} ?>
+        <?php } ?>
+        <?php } ?>
   </tbody>
 </table>
 </div>
@@ -191,33 +140,29 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">Habbo Username</th>
-      <th scope="col">Rank</th>
-      <th scope="col">Date</th>
-      <th scope="col">Reason</th>
+      <th scope="col">Old Rank</th>
+      <th scope="col">New Rank</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Updated On</th>
     </tr>
   </thead>
   <tbody>
-        <?php //if ($result_demotion = $mysqli->query($query)) { ?>
-        <?php //while ($row = $result->fetch_assoc()) { ?>
+    <?php if ($result_demotion = $mysqli->query($query_demotion)) { ?>
+        <?php while ($row = $result_demotion->fetch_assoc()) { ?>
              <?php 
-                    $field1demname = "ntyx";
-                    $field2demname = "non staff";
-                    $field3demname = "01-01-2020";
-                    $field4demname = "Trolling";
-                    //$field1demname = $row["hname"];
-                    //$field2demname = $row["rank"];
-                    //$field3demname = $row["updatedate"];
-                    //$field4demname = $row["reason"];
-                     ?>
+                    $field1dename = $row["oldrank"];
+                    $field2dename = $row["newrank"];
+                    $field3dename = $row["updatedby"];
+                    $field4dename = $row["updatedate"];
+                    ?>
       <tr>
-        <td><?php echo '<b>'.$field1demname.'</b>';?></td>
-        <td><?php echo '<b>'.$field2demname.'</b>';?></td>
-        <td><?php echo '<b>'.$field3demname.'</b>';?></td>
-        <td><?php echo '<b>'.$field4demname.'</b>';?></td>
+        <td><?php echo '<b>'.$field1dename.'</b>';?></td>
+        <td><?php echo '<b>'.$field2dename.'</b>';?></td>
+        <td><?php echo '<b>'.$field3dename.'</b>';?></td>
+        <td><?php echo '<b>'.$field4dename.'</b>';?></td>
       </tr>
-        <?php //} ?>
-        <?php //} ?>
+        <?php } ?>
+        <?php } ?>
   </tbody>
 </table>
 </div>
@@ -233,6 +178,7 @@
     const loader = document.querySelector(".loader");
     loader.className += " hidden"; // class "loader hidden"
     });
+
     </script>
 
     <!-- Wave SVG Animation -->
