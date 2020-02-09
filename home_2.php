@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include 'variable.php';?>
+<?php session_start(); include 'variable.php';?>
 <html>
 <head>
     <title></title>
@@ -58,10 +58,7 @@
             <a class="nav-link" href="./l_search">Search</a>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="./search">Entry Form</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="./search">Update Status</a>
+            <a class="nav-link" href="./entry_form2">Entry Form</a>
           </li>
           </ul>
           <form class="form-inline">
@@ -69,7 +66,7 @@
           </form>
         </div>
               <ul class="nav-item">
-              <a href="./l_profile?username=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
+              <a href="./l_profile?username=<?php echo $_SESSION["hname"]?>"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>" height="50px" width="50px" style="border-radius: 50%;"></a>
               </ul>
       </nav>
 
@@ -92,7 +89,7 @@
         </div>
         <div class="col-xl-1 col-md-1 col-1">
      <div class="habboavatar">
-      <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda"><br>
+      <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>"><br>
       </div>
       </div>
     </div>
@@ -102,8 +99,8 @@
         </div>
         <div class="col-xl-2 col-md-2 col-2">
     <div class="float-right">
-      <cite title="Source Title">Hello, tilhanda</cite>
-      <footer class="blockquote-footer"><cite title="Source Title">Founder of National Security Service</cite></footer>
+      <cite title="Source Title">Hello, <?php echo $_SESSION["hname"]?></cite>
+      <footer class="blockquote-footer"><cite title="Source Title">National Security Service</cite></footer>
     </div>
     </div>
     </div>
