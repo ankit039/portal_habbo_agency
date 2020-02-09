@@ -32,43 +32,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index">Home</a>
-          </li>
-              <!--1-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Rank
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="./ranks">Ranks</a>
-                  <a class="dropdown-item" href="./rankprice">Rank Price</a>
-                </div>
-              </li>
-              <!--2-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Special Units
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">External Affairs</a>
-                  <a class="dropdown-item" href="#">Financial Affairs</a>
-                  <a class="dropdown-item" href="#">Internal Affairs</a>
-                  <a class="dropdown-item" href="#">Transfer Unit</a>
-                </div>
-              </li>
-              <!--3-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Importants Links
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Code Of Conduct</a>
-                  <a class="dropdown-item" href="#">Pay FAQ</a>
-                </div>
-              </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./n_search">Search</a>
+         <li class="nav-item">
+          <script type="text/javascript">
+                function goBack() {
+                window.history.back();
+              }
+          </script>
+            <a class="nav-link" onclick="goBack()">Back</a>
           </li>
           </ul>
           <form class="form-inline">
