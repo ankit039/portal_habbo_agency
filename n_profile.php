@@ -97,9 +97,6 @@
             <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Login/Sign-up</button></a>
           </form>
         </div>
-              <ul class="nav-item">
-              <a href="./profile?hname=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
-              </ul>
       </nav>
 
       <!--image-->

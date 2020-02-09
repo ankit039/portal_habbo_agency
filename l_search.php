@@ -50,7 +50,7 @@
           </form>
         </div>
               <ul class="nav-item">
-              <a href="./profile?username=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
+              <a href="./l_profile?username=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
               </ul>
       </nav>
 
