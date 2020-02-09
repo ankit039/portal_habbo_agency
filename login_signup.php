@@ -84,42 +84,42 @@
         </div>
         <div class="col-xl-4 col-md-6 col-8">
     <!--login-->
-      <form id="login_form" name="login" method="post" action="./Login.php">
+      <form id="login_form" name="login" method="post" action="./login_signup_connect.php">
       <strong><h1><?php echo $agencyname;?></h1></strong>
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="text" class="form-control" id="exampleInputText" name="hname" placeholder="Habbo Username">
+          <small id="emailHelp" class="form-text text-muted">This is unique for everyone.</small>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
         </div>
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" name="login_submit" class="btn btn-primary">Login</button>
       </form>
     <!--signup-->
-      <form id="register_form" action="RegistrationPage.php" method="POST" style="display: none;">
+      <form id="register_form" action="./login_signup_connect.php" method="POST" style="display: none;">
       <strong><h1><?php echo $agencyname;?></h1></strong>
       <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputText" placeholder="Habbo Username">
+          <input type="text" class="form-control" id="exampleInputText" name="hname" placeholder="Habbo Username">
         </div>
       <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="cpwd" placeholder="Confirm Password">
         </div>
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Signup</button>
+        <button type="submit" name="signup_submit" class="btn btn-primary">Signup</button>
       </form>
         <a id="switchForm" href="#">
         <p>Not yet a member? Register now!</p></a>
