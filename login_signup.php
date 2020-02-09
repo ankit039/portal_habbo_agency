@@ -3,6 +3,8 @@
 <html>
 <head>
     <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/background.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/font.css">
@@ -30,6 +32,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index">Home</a>
+          </li>
               <!--1-->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,6 +66,9 @@
                   <a class="dropdown-item" href="#">Code Of Conduct</a>
                   <a class="dropdown-item" href="#">Pay FAQ</a>
                 </div>
+            <li class="nav-item">
+            <a class="nav-link" href="./n_search">Search</a>
+          </li>
               </li>
           </ul>
           <form class="form-inline">
