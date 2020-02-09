@@ -54,46 +54,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index">Home</a>
+         <li class="nav-item">
+            <a class="nav-link" href="./l_search">Search</a>
           </li>
-              <!--1-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Rank
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="./ranks">Ranks</a>
-                  <a class="dropdown-item" href="./rankprice">Rank Price</a>
-                </div>
-              </li>
-              <!--2-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Special Units
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">External Affairs</a>
-                  <a class="dropdown-item" href="#">Financial Affairs</a>
-                  <a class="dropdown-item" href="#">Internal Affairs</a>
-                  <a class="dropdown-item" href="#">Transfer Unit</a>
-                </div>
-              </li>
-              <!--3-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Importants Links
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Code Of Conduct</a>
-                  <a class="dropdown-item" href="#">Pay FAQ</a>
-                </div>
-              </li>
+         <li class="nav-item">
+            <a class="nav-link" href="./search">Entry Form</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="./search">Update Status</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./search">Signup History</a>
+          </li>
           </ul>
           <form class="form-inline">
             <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
+              <ul class="nav-item">
+              <a href="./l_profile?username=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
+              </ul>
       </nav>
 
       <!--Agency name-->
@@ -111,24 +91,37 @@
       </div>
     <!--image-->
     <div class="row">
-        <div class="col-xl-10 col-md-1 col-1">
+        <div class="col-xl-10 col-md-10 col-10">
         </div>
-        <div class="col-xl-1 col-md-10 col-10">
+        <div class="col-xl-1 col-md-1 col-1">
      <div class="habboavatar">
       <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda"><br>
       </div>
       </div>
     </div>
+    <!--greeting name-->
     <div class="row">
-        <div class="col-xl-9 col-md-1 col-1">
+        <div class="col-xl-9 col-md-9 col-9">
         </div>
-        <div class="col-xl-2 col-md-10 col-10">
+        <div class="col-xl-2 col-md-2 col-2">
     <div class="float-right">
       <cite title="Source Title">Hello, tilhanda</cite>
       <footer class="blockquote-footer"><cite title="Source Title">Founder of National Security Service</cite></footer>
     </div>
     </div>
     </div>
+    <!--which panel?-->
+    <div class="row">
+        <div class="col-xl-1 col-md-1 col-1">
+        </div>
+        <div class="col-xl-10 col-md-10 col-10">
+        <blockquote class="blockquote text-center display-1">
+          <div class="text2">
+            <h2><strong>(Admin Panel)</strong></h2>
+          </div>
+        </blockquote>
+       </div>
+      </div>
   
  
     <!--end loading-->
