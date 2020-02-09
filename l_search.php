@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include 'variable.php';?>
+<?php session_start(); include 'variable.php';?>
 <html>
 <head>
     <title></title>
@@ -33,16 +33,12 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
          <li class="nav-item">
-            <a class="nav-link" href="./l_search">Search</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="./search">Entry Form</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="./search">Update Status</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./search">Signup History</a>
+          <script type="text/javascript">
+                function goBack() {
+                window.history.back();
+              }
+          </script>
+            <a class="nav-link" onclick="goBack()">Back</a>
           </li>
           </ul>
           <form class="form-inline">
@@ -50,7 +46,7 @@
           </form>
         </div>
               <ul class="nav-item">
-              <a href="./l_profile?username=tilhanda"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=tilhanda" class="rounded float-right" alt="tilhanda" height="50px" width="50px" style="border-radius: 50%;"></a>
+              <a href="./l_profile?username=<?php echo $_SESSION["hname"]?>"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>" height="50px" width="50px" style="border-radius: 50%;"></a>
               </ul>
       </nav>
 
