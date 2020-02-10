@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php session_start(); $habboname=$_GET['username']; include_once './l_profile_connect.php'; include_once './promotion_connect.php'; include_once './demotion_connect.php';?>
+<?php $habboname=$_GET['username']; include_once './n_profile_connect.php'; ?>
 <html>
 <head>
     <title></title>
@@ -64,12 +64,9 @@
           </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
+            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Login/Signup</button></a>
           </form>
         </div>
-              <ul class="nav-item">
-              <a href="./n_profile?username=<?php echo $_SESSION["hname"]?>"><img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=2&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>" height="50px" width="50px" style="border-radius: 50%;"></a>
-              </ul>
       </nav>
 
       <!--image-->
@@ -89,6 +86,11 @@
         <div class="col-xl-6 col-md-8 col-8">
     <table class="table">
   <tbody>
+    <?php if ($result_status = $mysqli->query($query_status)) { ?>
+    <?php while ($row = $result_status->fetch_assoc()) { ?>
+            <?php 
+                    $field2name = $row["status"];
+    }}?>
     <?php if ($result_profile = $mysqli->query($query_profile)) { ?>
         <?php while ($row = $result_profile->fetch_assoc()) { ?>
              <?php 
@@ -97,6 +99,10 @@
     <tr>
       <td>Habbo Username: </td>
       <td><?php echo '<b>'.$field1name.'</b>';?></td>
+    </tr>
+    <tr>
+      <td>Account Status: </td>
+      <td><?php echo '<b>'.$field2name.'</b>';?></td>
     </tr>
           <?php } ?>
         <?php } ?>
@@ -115,13 +121,18 @@
     </tr>
   </thead>
   <tbody>
-    <?php if ($result_promotion = $mysqli->query($query_promotion)) { ?>
-        <?php while ($row = $result_promotion->fetch_assoc()) { ?>
+    <?php if ($result_pro = $mysqli->query($query_pro)) { ?>
+        <?php while ($row = $result_pro->fetch_assoc()) { ?>
              <?php 
                     $field1proname = $row["oldrank"];
                     $field2proname = $row["newrank"];
                     $field3proname = $row["updatedby"];
                     $field4proname = $row["updatedate"];
+                    $type = $row["type"];
+                    if($type==1)
+                    {
+                      if($field3proname!="ADMIN")
+                      {
                      ?>
       <tr>
         <td><?php echo '<b>'.$field1proname.'</b>';?></td>
@@ -129,6 +140,8 @@
         <td><?php echo '<b>'.$field3proname.'</b>';?></td>
         <td><?php echo '<b>'.$field4proname.'</b>';?></td>
       </tr>
+        <?php } ?>
+        <?php } ?>
         <?php } ?>
         <?php } ?>
   </tbody>
@@ -147,13 +160,18 @@
     </tr>
   </thead>
   <tbody>
-    <?php if ($result_demotion = $mysqli->query($query_demotion)) { ?>
-        <?php while ($row = $result_demotion->fetch_assoc()) { ?>
+    <?php if ($result_pro = $mysqli->query($query_pro)) { ?>
+        <?php while ($row = $result_pro->fetch_assoc()) { ?>
              <?php 
                     $field1dename = $row["oldrank"];
                     $field2dename = $row["newrank"];
                     $field3dename = $row["updatedby"];
                     $field4dename = $row["updatedate"];
+                    $type = $row["type"];
+                    if($type==2)
+                    {
+                      if($field3dename!="ADMIN")
+                      {
                     ?>
       <tr>
         <td><?php echo '<b>'.$field1dename.'</b>';?></td>
@@ -161,6 +179,8 @@
         <td><?php echo '<b>'.$field3dename.'</b>';?></td>
         <td><?php echo '<b>'.$field4dename.'</b>';?></td>
       </tr>
+        <?php } ?>
+        <?php } ?>
         <?php } ?>
         <?php } ?>
   </tbody>
