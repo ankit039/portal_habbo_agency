@@ -1,5 +1,9 @@
+<?php 
+session_start();
+if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
+{?>
 <!DOCTYPE html>
-<?php session_start(); include 'variable.php';?>
+<?php include 'variable.php';?>
 <html>
 <head>
     <title></title>
@@ -61,14 +65,19 @@
             <a class="nav-link" href="./entry_form1">Entry Form</a>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="./update_status">Update Status</a>
+          <form method="post" action="./update_status.php">
+            <button class="btn btn-warning nav-link" value="0" name="status">Update Status</button>
+          </form>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./signup_history">Signup History</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./alldetail_l">All Detail</a>
+          </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
+            <a href="./logout_connect"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
               <ul class="nav-item">
@@ -207,3 +216,10 @@
 
 </body>
 </html>
+<?php
+                 }
+
+            else{
+                    echo ('<meta http-equiv="refresh" content="0; URL= logout_connect">');
+                }
+?>
