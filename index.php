@@ -93,6 +93,9 @@
             <li class="nav-item">
             <a class="nav-link" href="./n_search">Search</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./alldetail">All Detail</a>
+          </li>
           </ul>
           <form class="form-inline">
             <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Login/Sign-up</button></a>
