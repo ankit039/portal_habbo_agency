@@ -1,5 +1,9 @@
+<?php 
+session_start();
+if($_SESSION["hname"]!="" AND $_SESSION["rank_code2"]!="")
+{?>
 <!DOCTYPE html>
-<?php session_start(); include 'variable.php';?>
+<?php include 'variable.php';?>
 <html>
 <head>
     <title></title>
@@ -42,7 +46,7 @@
           </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
+            <a href="./logout_connect"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
               <ul class="nav-item">
@@ -64,12 +68,12 @@
         </div>
       <div class="form-group">
         <select class="form-control" id="division" name="division">
-            <option name="rank_code" value="1">Standards</option>
-            <option name="rank_code" value="2">Advertising</option>
-            <option name="rank_code" value="3">Security</option>
-            <option name="rank_code" value="4">Trainer</option>
-            <option name="rank_code" value="5">Management</option>
-            <option name="rank_code" value="6">Senior Management</option>
+            <option name="rank_code" value="0">Standards</option>
+            <option name="rank_code" value="1">Advertising</option>
+            <option name="rank_code" value="2">Security</option>
+            <option name="rank_code" value="3">Trainer</option>
+            <option name="rank_code" value="4">Management</option>
+            <option name="rank_code" value="5">Senior Management</option>
         </select>
         </div>
         <div class="form-group">
@@ -115,7 +119,7 @@
     $('#division').on('change', function(){
    console.log($('#division').val());
     $('#division_rank').html('');
-    if($('#division').val()==1)
+    if($('#division').val()==0)
     {
         $('#division_rank').append('<option value="Recruit">Recruit</option>');
         $('#division_rank').append('<option value="Agent I">Agent I</option>');
@@ -124,7 +128,7 @@
         $('#division_rank').append('<option value="Agent IV">Agent IV</option>');
         $('#division_rank').append('<option value="Head Agent">Head Agent</option>');
     }
-    else if($('#division').val()==2)
+    else if($('#division').val()==1)
     {
         $('#division_rank').append('<option value="Trial Patrol Officer">Trial Patrol Officer</option>');
         $('#division_rank').append('<option value="Patrol Officer I">Patrol Officer I</option>');
@@ -133,7 +137,7 @@
         $('#division_rank').append('<option value="Patrol Officer IV">Patrol Officer IV</option>');
         $('#division_rank').append('<option value="Head Patrol Officer">Head Patrol Officer</option>');
     }
-    else if($('#division').val()==3)
+    else if($('#division').val()==2)
     {
         $('#division_rank').append('<option value="Trial Security Member">Trial Security Member</option>');
         $('#division_rank').append('<option value="Security Member I">Security Member I</option>');
@@ -142,7 +146,7 @@
         $('#division_rank').append('<option value="Security Member IV">Security Member IV</option>');
         $('#division_rank').append('<option value="Head Security">Head Security</option>');
     }
-else if($('#division').val()==4)
+else if($('#division').val()==3)
     {
         $('#division_rank').append('<option value="Trial Training Officer">Trial Training Officer</option>');
         $('#division_rank').append('<option value="Training Officer I">Training Officer I</option>');
@@ -151,7 +155,7 @@ else if($('#division').val()==4)
         $('#division_rank').append('<option value="Training Officer IV">Training Officer IV</option>');
         $('#division_rank').append('<option value="Head Training Officer">Head Training Officer</option>');
     }
-else if($('#division').val()==5)
+else if($('#division').val()==4)
     {
         $('#division_rank').append('<option value="Trial Management">Trial Management</option>');
         $('#division_rank').append('<option value="Junior Manager I">Junior Manager I</option>');
@@ -163,7 +167,7 @@ else if($('#division').val()==5)
         $('#division_rank').append('<option value="Senior Manager III">Senior Manager III</option>');
         $('#division_rank').append('<option value="Senior Manager IV">Senior Manager IV</option>');
     }
-else if($('#division').val()==6)
+else if($('#division').val()==5)
     {
         $('#division_rank').append('<option value="Junior Commissioner I">Junior Commissioner I</option>');
         $('#division_rank').append('<option value="Junior Commissioner II">Junior Commissioner II</option>');
@@ -250,3 +254,10 @@ else if($('#division').val()==6)
   </div>
 </body>
 </html>
+<?php
+                 }
+
+            else{
+                    echo ('<meta http-equiv="refresh" content="0; URL= logout_connect">');
+                }
+?>
