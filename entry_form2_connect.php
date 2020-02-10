@@ -22,17 +22,23 @@ if (isset($_POST['submit'])) {
 	}
 	else
 	{
-		if($state == "promotion")
+		if($state == 1)
 		{
-		$sql="SELECT * FROM promotion where id IN (SELECT MAX(id) FROM promotion WHERE hname ='$habboname')";
+		$sql="SELECT * FROM rankactivity where id IN (SELECT MAX(id) FROM rankactivity WHERE hname ='$habboname') AND type = 1";
 		$result= mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
-		echo $resultcheck;
+		//$row = mysqli_fetch_assoc($result);
+	    //$oldrank = $row["type"];
 		if($resultcheck < 1)
 		{
 		    //not found
-			$oldrank="Recruit";
-			$sql= "INSERT INTO promotion (hname,oldrank,newrank,updatedby,updatedate) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date');";
+		    $sql="SELECT * FROM rankactivity where id IN (SELECT MAX(id) FROM rankactivity WHERE hname ='$habboname') AND type = 2";
+			$result= mysqli_query($conn, $sql);
+			$resultcheck = mysqli_num_rows($result);
+		    $row = mysqli_fetch_assoc($result);
+			$oldrank = $row["newrank"];
+			//oldrank
+			$sql= "INSERT INTO rankactivity (hname,oldrank,newrank,updatedby,updatedate,type) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date','1');";
 			mysqli_query($conn,$sql);
 			$sql= "UPDATE logindetail SET rank_code='$division', updatedby='$updatedby', updatedate='$date' WHERE hname='$habboname'";
 			mysqli_query($conn,$sql);
@@ -44,7 +50,8 @@ if (isset($_POST['submit'])) {
 	   	    //found
 	   		$row = mysqli_fetch_assoc($result);
 			$oldrank = $row["newrank"];
-			$sql= "INSERT INTO promotion (hname,oldrank,newrank,updatedby,updatedate) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date');";
+			echo $oldrank;
+			$sql= "INSERT INTO rankactivity (hname,oldrank,newrank,updatedby,updatedate,type) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date','1');";
 			mysqli_query($conn,$sql);
 			$sql= "UPDATE logindetail SET rank_code='$division', updatedby='$updatedby', updatedate='$date' WHERE hname='$habboname'";
 			mysqli_query($conn,$sql);
@@ -53,9 +60,9 @@ if (isset($_POST['submit'])) {
 	    }
 			
 		}
-		elseif($state == "demotion")
+		elseif($state == 2)
 		{
-		$sql="SELECT * FROM demotion where id IN (SELECT MAX(id) FROM demotion WHERE hname ='$habboname')";
+		$sql="SELECT * FROM rankactivity where id IN (SELECT MAX(id) FROM rankactivity WHERE hname ='$habboname')AND type = 1";
 		$result= mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
 		echo $resultcheck;
@@ -63,7 +70,7 @@ if (isset($_POST['submit'])) {
 		{
 		    //not found
 		    $oldrank="Recruit";
-			$sql= "INSERT INTO demotion (hname,oldrank,newrank,updatedby,updatedate) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date');";
+			$sql= "INSERT INTO rankactivity (hname,oldrank,newrank,updatedby,updatedate) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date');";
 			mysqli_query($conn,$sql);
 			$sql= "UPDATE logindetail SET rank_code='$division', updatedby='$updatedby', updatedate='$date' WHERE hname='$habboname'";
 			mysqli_query($conn,$sql);
@@ -75,7 +82,7 @@ if (isset($_POST['submit'])) {
 	   	    //found
 	   		$row = mysqli_fetch_assoc($result);
 			$oldrank = $row["newrank"];
-			$sql= "INSERT INTO demotion (hname,oldrank,newrank,updatedby,updatedate) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date');";
+			$sql= "INSERT INTO rankactivity (hname,oldrank,newrank,updatedby,updatedate,type) VALUES ('$habboname','$oldrank','$division_rank','$updatedby','$date','2');";
 			mysqli_query($conn,$sql);
 			$sql= "UPDATE logindetail SET rank_code='$division', updatedby='$updatedby', updatedate='$date' WHERE hname='$habboname'";
 			mysqli_query($conn,$sql);
