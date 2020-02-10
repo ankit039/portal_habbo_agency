@@ -69,6 +69,9 @@
             <li class="nav-item">
             <a class="nav-link" href="./n_search">Search</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./alldetail">All Detail</a>
+          </li>
               </li>
           </ul>
           <form class="form-inline">
