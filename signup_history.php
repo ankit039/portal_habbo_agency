@@ -1,5 +1,9 @@
+<?php 
+session_start();
+if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
+{?>
 <!DOCTYPE html>
-<?php session_start(); include 'signup_history_connect.php';?>
+<?php include 'signup_history_connect.php';?>
 <html>
 <head>
     <title></title>
@@ -64,7 +68,7 @@
           </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
+            <a href="./logout_connect"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
               <ul class="nav-item">
@@ -202,3 +206,10 @@
 
 </body>
 </html>
+<?php
+                 }
+
+            else{
+                    echo ('<meta http-equiv="refresh" content="0; URL= logout_connect">');
+                }
+?>
