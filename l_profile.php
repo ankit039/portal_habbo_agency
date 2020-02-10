@@ -1,5 +1,9 @@
+<?php 
+session_start();
+if($_SESSION["hname"]!="")
+{?>
 <!DOCTYPE html>
-<?php session_start(); $habboname=$_GET['username']; include_once './l_profile_connect.php'; include_once './promotion_connect.php'; include_once './demotion_connect.php';?>
+<?php $habboname=$_GET['username']; include_once './l_profile_connect.php'; ?>
 <html>
 <head>
     <title></title>
@@ -64,7 +68,7 @@
           </li>
           </ul>
           <form class="form-inline">
-            <a href="./login_signup"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
+            <a href="./logout_connect"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>
           </form>
         </div>
               <ul class="nav-item">
@@ -89,6 +93,11 @@
         <div class="col-xl-6 col-md-8 col-8">
     <table class="table">
   <tbody>
+<?php if ($result_status = $mysqli->query($query_status)) { ?>
+    <?php while ($row = $result_status->fetch_assoc()) { ?>
+            <?php 
+                    $field3name = $row["status"];
+    }}?>
     <?php if ($result_profile = $mysqli->query($query_profile)) { ?>
         <?php while ($row = $result_profile->fetch_assoc()) { ?>
              <?php 
@@ -102,6 +111,10 @@
     <tr>
       <td>E-mail: </td>
       <td><?php echo '<b>'.$field2name.'</b>';?></td>
+    </tr>
+    <tr>
+      <td>Account Status: </td>
+      <td><?php echo '<b>'.$field3name.'</b>';?></td>
     </tr>
           <?php } ?>
         <?php } ?>
@@ -120,13 +133,18 @@
     </tr>
   </thead>
   <tbody>
-    <?php if ($result_promotion = $mysqli->query($query_promotion)) { ?>
-        <?php while ($row = $result_promotion->fetch_assoc()) { ?>
+    <?php if ($result_pro = $mysqli->query($query_pro)) { ?>
+        <?php while ($row = $result_pro->fetch_assoc()) { ?>
              <?php 
                     $field1proname = $row["oldrank"];
                     $field2proname = $row["newrank"];
                     $field3proname = $row["updatedby"];
                     $field4proname = $row["updatedate"];
+                    $type = $row["type"];
+                    if($type==1)
+                    {
+                      if($field3proname!="ADMIN")
+                      {
                      ?>
       <tr>
         <td><?php echo '<b>'.$field1proname.'</b>';?></td>
@@ -136,9 +154,12 @@
       </tr>
         <?php } ?>
         <?php } ?>
+        <?php } ?>
+        <?php }?>
   </tbody>
 </table>
 </div>
+
 <!--Demotion logs of user-->
 <h3>Demotion Logs</h3>
 <div class="table-responsive">
@@ -152,13 +173,18 @@
     </tr>
   </thead>
   <tbody>
-    <?php if ($result_demotion = $mysqli->query($query_demotion)) { ?>
-        <?php while ($row = $result_demotion->fetch_assoc()) { ?>
+    <?php if ($result_pro = $mysqli->query($query_pro)) { ?>
+        <?php while ($row = $result_pro->fetch_assoc()) { ?>
              <?php 
                     $field1dename = $row["oldrank"];
                     $field2dename = $row["newrank"];
                     $field3dename = $row["updatedby"];
                     $field4dename = $row["updatedate"];
+                    $type = $row["type"];
+                    if($type==2)
+                    {
+                      if($field3dename!="ADMIN")
+                      {
                     ?>
       <tr>
         <td><?php echo '<b>'.$field1dename.'</b>';?></td>
@@ -166,6 +192,8 @@
         <td><?php echo '<b>'.$field3dename.'</b>';?></td>
         <td><?php echo '<b>'.$field4dename.'</b>';?></td>
       </tr>
+        <?php } ?>
+        <?php } ?>
         <?php } ?>
         <?php } ?>
   </tbody>
@@ -261,3 +289,10 @@
 
 </body>
 </html>
+<?php
+                 }
+
+            else{
+                    echo ('<meta http-equiv="refresh" content="0; URL= logout_connect">');
+                }
+?>
