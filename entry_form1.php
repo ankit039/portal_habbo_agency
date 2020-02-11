@@ -68,19 +68,19 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
         </div>
       <div class="form-group">
         <select class="form-control" id="division" name="division">
-            <option name="rank_code" value="0">Standards</option>
-            <option name="rank_code" value="1">Advertising</option>
-            <option name="rank_code" value="2">Security</option>
-            <option name="rank_code" value="3">Trainer</option>
-            <option name="rank_code" value="4">Management</option>
-            <option name="rank_code" value="5">Senior Management</option>
-            <option name="rank_code" value="6">Internal Affairs (5iC)</option>
-            <option name="rank_code" value="7">Head of Departments (4iC)</option>
-            <option name="rank_code" value="8">Directors Of NSS (3iC)</option>
-            <option name="rank_code" value="9">Supreme Command of NSS (2iC)</option>
-            <option name="rank_code" value="10">Founder's Representatives (1iC)</option>
-            <option name="rank_code" value="11">Ownership (0.5iC)</option>
-            <option name="rank_code" value="12">Foundation Cabinet (iC)</option>
+            <option name="rank_code" value="1">Standards</option>
+            <option name="rank_code" value="2">Advertising</option>
+            <option name="rank_code" value="3">Security</option>
+            <option name="rank_code" value="4">Trainer</option>
+            <option name="rank_code" value="5">Management</option>
+            <option name="rank_code" value="6">Senior Management</option>
+            <option name="rank_code" value="7">Internal Affairs (5iC)</option>
+            <option name="rank_code" value="8">Head of Departments (4iC)</option>
+            <option name="rank_code" value="9">Directors Of NSS (3iC)</option>
+            <option name="rank_code" value="10">Supreme Command of NSS (2iC)</option>
+            <option name="rank_code" value="11">Founder's Representatives (1iC)</option>
+            <option name="rank_code" value="12">Ownership (0.5iC)</option>
+            <option name="rank_code" value="13">Foundation Cabinet (iC)</option>
         </select>
         </div>
         <div class="form-group">
@@ -126,7 +126,7 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
     $('#division').on('change', function(){
    console.log($('#division').val());
     $('#division_rank').html('');
-    if($('#division').val()==0)
+    if($('#division').val()==1)
     {
         $('#division_rank').append('<option value="Recruit">Recruit</option>');
         $('#division_rank').append('<option value="Agent I">Agent I</option>');
@@ -135,7 +135,7 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
         $('#division_rank').append('<option value="Agent IV">Agent IV</option>');
         $('#division_rank').append('<option value="Head Agent">Head Agent</option>');
     }
-    else if($('#division').val()==1)
+    else if($('#division').val()==2)
     {
         $('#division_rank').append('<option value="Trial Patrol Officer">Trial Patrol Officer</option>');
         $('#division_rank').append('<option value="Patrol Officer I">Patrol Officer I</option>');
@@ -144,7 +144,7 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
         $('#division_rank').append('<option value="Patrol Officer IV">Patrol Officer IV</option>');
         $('#division_rank').append('<option value="Head Patrol Officer">Head Patrol Officer</option>');
     }
-    else if($('#division').val()==2)
+    else if($('#division').val()==3)
     {
         $('#division_rank').append('<option value="Trial Security Member">Trial Security Member</option>');
         $('#division_rank').append('<option value="Security Member I">Security Member I</option>');
@@ -153,7 +153,7 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code1"]!="")
         $('#division_rank').append('<option value="Security Member IV">Security Member IV</option>');
         $('#division_rank').append('<option value="Head Security">Head Security</option>');
     }
-else if($('#division').val()==3)
+else if($('#division').val()==4)
     {
         $('#division_rank').append('<option value="Trial Training Officer">Trial Training Officer</option>');
         $('#division_rank').append('<option value="Training Officer I">Training Officer I</option>');
@@ -162,7 +162,7 @@ else if($('#division').val()==3)
         $('#division_rank').append('<option value="Training Officer IV">Training Officer IV</option>');
         $('#division_rank').append('<option value="Head Training Officer">Head Training Officer</option>');
     }
-else if($('#division').val()==4)
+else if($('#division').val()==5)
     {
         $('#division_rank').append('<option value="Trial Management">Trial Management</option>');
         $('#division_rank').append('<option value="Junior Manager I">Junior Manager I</option>');
@@ -174,7 +174,7 @@ else if($('#division').val()==4)
         $('#division_rank').append('<option value="Senior Manager III">Senior Manager III</option>');
         $('#division_rank').append('<option value="Senior Manager IV">Senior Manager IV</option>');
     }
-else if($('#division').val()==5)
+else if($('#division').val()==6)
     {
         $('#division_rank').append('<option value="Junior Commissioner I">Junior Commissioner I</option>');
         $('#division_rank').append('<option value="Junior Commissioner II">Junior Commissioner II</option>');
@@ -184,7 +184,7 @@ else if($('#division').val()==5)
         $('#division_rank').append('<option value="Senior Commissioner III">Senior Commissioner III</option>');
         $('#division_rank').append('<option value="Head Commissioner">Head Commissioner</option>');
     }
-else if($('#division').val()==6)
+else if($('#division').val()==7)
     {
         $('#division_rank').append('<option value="Trial IA">Trial IA</option>');
         $('#division_rank').append('<option value="IA Officer I">IA Officer I</option>');
@@ -193,7 +193,7 @@ else if($('#division').val()==6)
         $('#division_rank').append('<option value="IA Officer IV">IA Officer IV</option>');
         $('#division_rank').append('<option value="Head IA Officer">Head IA Officer</option>');
     }
-else if($('#division').val()==7)
+else if($('#division').val()==8)
     {
         $('#division_rank').append('<option value="Trial HoD">Trial HoD</option>');
         $('#division_rank').append('<option value="Head of Advertising">Head of Advertising</option>');
@@ -204,7 +204,7 @@ else if($('#division').val()==7)
         $('#division_rank').append('<option value="Head of Financial Affairs">Head of Financial Affairs</option>');
         $('#division_rank').append('<option value="Head of Transfers">Head of Transfers</option>');
     }
-else if($('#division').val()==8)
+else if($('#division').val()==9)
     {
         $('#division_rank').append('<option value="Trial Directors">Trial Directors</option>');
         $('#division_rank').append('<option value="Director of Advertising">Director of Advertising</option>');
@@ -215,13 +215,13 @@ else if($('#division').val()==8)
         $('#division_rank').append('<option value="Director of Financial Affairs">Director of Financial Affairs</option>');
         $('#division_rank').append('<option value="Director of Transfers">Director of Transfers</option>');
     }
-    else if($('#division').val()==9)
+    else if($('#division').val()==10)
     {
         $('#division_rank').append('<option value="Trial SC">Trial SC</option>');
         $('#division_rank').append('<option value="Junior Supreme Commander">Junior Supreme Commander</option>');
         $('#division_rank').append('<option value="Senior Supreme Commander">Senior Supreme Commander</option>');
     }
-else if($('#division').val()==10)
+else if($('#division').val()==11)
     {
         $('#division_rank').append('<option value="Tilhanda Representative">Tilhanda Representative</option>');
         $('#division_rank').append('<option value="Co-Founder Representative">Co-Founder Representative</option>');
@@ -231,7 +231,7 @@ else if($('#division').val()==10)
         $('#division_rank').append('<option value="Secretary of Financial Affairs">Secretary of Financial Affairs</option>');
         $('#division_rank').append('<option value="President">President</option>');
     }
-else if($('#division').val()==11)
+else if($('#division').val()==12)
     {
         $('#division_rank').append('<option value="Trial Ownership">Trial Ownership</option>');
         $('#division_rank').append('<option value="Junior Owner">Junior Owner</option>');
@@ -239,7 +239,7 @@ else if($('#division').val()==11)
         $('#division_rank').append('<option value="Head Owner">Head Owner</option>');
         $('#division_rank').append('<option value="Owner">Owner</option>');
     }
-else if($('#division').val()==12)
+else if($('#division').val()==13)
     {
         $('#division_rank').append('<option value="Trial Founder">Trial Founder</option>');
         $('#division_rank').append('<option value="Junior Founder">Junior Founder</option>');
