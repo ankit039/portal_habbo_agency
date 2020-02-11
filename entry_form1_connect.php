@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'db.php';
+include 'entry_form_error_connect.php';
 
 if (isset($_POST['submit'])) {
 	$habboname = mysqli_real_escape_string($conn, $_POST['habboname']);

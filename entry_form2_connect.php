@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'db.php';
+include 'entry_form_error_connect.php';
 
 if (isset($_POST['submit'])) {
 	$habboname = mysqli_real_escape_string($conn, $_POST['habboname']);
@@ -8,12 +9,14 @@ if (isset($_POST['submit'])) {
 	$division_rank = mysqli_real_escape_string($conn, $_POST['division_rank']);
 	$state = mysqli_real_escape_string($conn, $_POST['state']);
 }
+
 	//error handlers 
 	//check for empty fields
     $posted_data=$_SESSION["hname"];
     $_POST['updatedby']=$posted_data;
     $updatedby = $_POST['updatedby'];
     $date=date("d-m-Y h:ia");
+
 
 	if (empty($habboname)|| empty($division)|| empty($division_rank)||empty($state)||empty($updatedby)) 
 	{
