@@ -67,6 +67,9 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code2"]!="")
           <li class="nav-item">
             <a class="nav-link" href="./alldetail_l">All Detail</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./message">Chat</a>
+          </li>
           </ul>
           <form class="form-inline">
             <a href="./logout_connect"><button class="btn btn-m btn-outline-secondary" type="button">Logout</button></a>

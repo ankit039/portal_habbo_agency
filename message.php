@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if($_SESSION["hname"]!="" AND $_SESSION["rank_code3"]!="")
+if($_SESSION["hname"]!="")
 {?>
 <!DOCTYPE html>
 <?php include 'variable.php';?>
@@ -12,12 +12,17 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code3"]!="")
     <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/background.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/font.css">
+    <link rel="stylesheet" href="resources/style.css">
+    <script type="text/javascript" src="resources/jquery.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <style>
+*{
+  overflow: hidden;
+}
   .text1 h1{
     font-size: 60px;
   }  
@@ -42,7 +47,8 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code3"]!="")
     }
     
   }
- 
+
+
   </style>
 <body>
     <div class="loader">
@@ -52,20 +58,19 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code3"]!="")
 
 
    <!--navbar-->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
          <li class="nav-item">
-            <a class="nav-link" href="./l_search">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./alldetail_l">All Detail</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./message">Chat</a>
+          <script type="text/javascript">
+                function goBack() {
+                window.history.back();
+              }
+          </script>
+            <a class="nav-link" onclick="goBack()">Back</a>
           </li>
           </ul>
           <form class="form-inline">
@@ -85,44 +90,16 @@ if($_SESSION["hname"]!="" AND $_SESSION["rank_code3"]!="")
         <div class="col-xl-10 col-md-10 col-10">
         <blockquote class="blockquote text-center display-1">
           <div class="text1">
-            <h1><strong><?php echo $agencyfullname; ?></strong></h1>
+            <h1><strong><?php echo $agencyname; ?></strong></h1>
           </div>
         </blockquote>
        </div>
       </div>
-    <!--image-->
-    <div class="row">
-        <div class="col-xl-10 col-md-10 col-10">
-        </div>
-        <div class="col-xl-1 col-md-1 col-1">
-     <div class="habboavatar">
-      <img src="https://www.habbo.com/habbo-imaging/avatarimage?direction=4&head_direction=3&gesture=sml&size=m&user=<?php echo $_SESSION["hname"]?>" class="rounded float-right" alt="<?php echo $_SESSION["hname"]?>"><br>
-      </div>
-      </div>
-    </div>
-    <!--greeting name-->
-    <div class="row">
-        <div class="col-xl-9 col-md-9 col-9">
-        </div>
-        <div class="col-xl-2 col-md-2 col-2">
-    <div class="float-right">
-      <cite title="Source Title">Hello, <?php echo $_SESSION["hname"]?></cite>
-      <footer class="blockquote-footer"><cite title="Source Title">National Security Service</cite></footer>
-    </div>
-    </div>
-    </div>
+
     <!--which panel?-->
-    <div class="row">
-        <div class="col-xl-1 col-md-1 col-1">
+        <div class="embed-responsive embed-responsive-1by1">
+           <iframe class="embed-responsive-item" src="./chat/index"></iframe>
         </div>
-        <div class="col-xl-10 col-md-10 col-10">
-        <blockquote class="blockquote text-center display-1">
-          <div class="text2">
-            <h2><strong>(Junior Panel)</strong></h2>
-          </div>
-        </blockquote>
-       </div>
-      </div>
   
  
     <!--end loading-->
