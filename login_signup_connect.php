@@ -45,7 +45,7 @@ if(empty($hname) || empty($password))
 	   	$row = mysqli_fetch_assoc($result);
 			if (count($row)) 
 		{
-	   	if ($row["status"]=='Unverified')
+	   	if ($row["status"]=='Unverified' OR $row["status"]=='Ban')
 	   	{
 	   		$sql= "INSERT INTO iptrack (hname,type,ip,reason) VALUES ('$hname','$var','$store_ip','login banned or unverified');"; mysqli_query($conn,$sql);
 			header("location: login_signup?login=status_Unverified_account_or_Banned");
